@@ -60,7 +60,8 @@
               "buildTarget": "essentials:build:production"
             },
             "development": {
-              "buildTarget": "essentials:build:development"
+              "buildTarget": "essentials:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"

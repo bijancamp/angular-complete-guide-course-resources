@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { TasksService } from "./tasks.service";
-import { type NewTask } from './new-task/new-task.model';
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { TaskComponent } from "./task/task.component";
 

@@ -11,7 +11,7 @@ import { type NewTask } from './new-task.model';
 })
 export class NewTaskComponent {
   @Output() cancel = new EventEmitter<void>();
-  @Output() create = new EventEmitter<NewTask>();
+  @Output() add = new EventEmitter<NewTask>();
   enteredTitle = '';
   enteredSummary = '';
   enteredDate = '';
@@ -21,7 +21,7 @@ export class NewTaskComponent {
   }
 
   onSubmit() {
-    this.create.emit({
+    this.add.emit({
       title: this.enteredTitle,
       summary: this.enteredSummary,
       dueDate: this.enteredDate

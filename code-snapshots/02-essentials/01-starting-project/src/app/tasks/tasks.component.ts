@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NewTask } from './new-task/new-task.model';
+import { type NewTask } from './new-task/new-task.model';
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { TaskComponent } from "./task/task.component";
 
@@ -54,15 +54,11 @@ export class TasksComponent {
     this.isAddingTask = false;
   }
 
-  onCreateTask(newTask: NewTask) {
+  onAddTask(newTask: NewTask) {
     this.isAddingTask = false;
-    const lastTask = this.tasks.at(-1);
-    const lastId = lastTask ? lastTask.id : 't0';
-    const nextIdNumber = parseInt(lastId.substring(1)) + 1;
-    const nextId = 't' + nextIdNumber;
 
-    this.tasks.push({
-      id: nextId,
+    this.tasks.unshift({
+      id: new Date().getTime().toString(),
       userId: this.userId,
       ...newTask
     });

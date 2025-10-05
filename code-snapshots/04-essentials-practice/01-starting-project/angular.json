@@ -62,7 +62,8 @@
               "buildTarget": "essentials-practice:build:production"
             },
             "development": {
-              "buildTarget": "essentials-practice:build:development"
+              "buildTarget": "essentials-practice:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"
@@ -95,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

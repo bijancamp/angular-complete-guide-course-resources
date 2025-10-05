@@ -14,11 +14,11 @@ export class UserComponent {
   @Input({ required: true }) selected!: boolean;
   @Output() select = new EventEmitter<string>();
 
-  get imagePath() {
+  get imagePath(): string {
     return 'assets/users/' + this.user.avatar;
   }
 
-  onSelectUser() {
+  onSelectUser(): void {
     this.select.emit(this.user.id);
   }
 }

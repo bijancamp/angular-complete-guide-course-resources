@@ -16,11 +16,11 @@ export class AppComponent {
   users = DUMMY_USERS;
   selectedUserId?: string;
 
-  get selectedUser() {
+  get selectedUser(): { id: string; name: string; avatar: string } | undefined {
     return this.users.find((user) => user.id === this.selectedUserId);
   }
 
-  onSelectUser(id: string) {
+  onSelectUser(id: string): void {
     this.selectedUserId = id;
   }
 }

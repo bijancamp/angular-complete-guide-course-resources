@@ -36,11 +36,11 @@ export class TasksService {
     }
   }
 
-  getUserTasks(userId: string) {
+  getUserTasks(userId: string): Task[] {
     return this.tasks.filter(task => task.userId === userId);
   }
 
-  addTask(task: NewTask, userId: string) {
+  addTask(task: NewTask, userId: string): void {
     this.tasks.unshift({
       id: new Date().getTime().toString(),
       userId: userId,
@@ -49,7 +49,7 @@ export class TasksService {
     this.saveTasks();
   }
 
-  removeTask(id: string) {
+  removeTask(id: string): void {
     this.tasks = this.tasks.filter(task => task.id !== id);
     this.saveTasks();
   }

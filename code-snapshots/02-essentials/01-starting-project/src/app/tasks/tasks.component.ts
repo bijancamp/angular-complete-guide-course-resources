@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TasksService } from "./tasks.service";
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { TaskComponent } from "./task/task.component";
+import { type Task } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -17,15 +18,15 @@ export class TasksComponent {
 
   constructor(private tasksService: TasksService) {}
 
-  get selectedUserTasks() {
+  get selectedUserTasks(): Task[] {
     return this.tasksService.getUserTasks(this.userId);
   }
 
-  onStartAddTask() {
+  onStartAddTask(): void {
     this.isAddingTask = true;
   }
 
-  onCloseAddTask() {
+  onCloseAddTask(): void {
     this.isAddingTask = false;
   }
 }

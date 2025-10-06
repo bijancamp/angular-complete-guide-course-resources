@@ -1,9 +1,7 @@
-// Use the below code as a help
-// e.g., integrate it into a service or component
-// You may need to tweak it, depending on where and how you use it
+import { type InvestmentYearData } from "./investment-results.model";
 
-function calculateInvestmentResults() {
-  const annualData = [];
+export function calculateInvestmentResults(initialInvestment: number, annualInvestment: number, expectedReturn: number, duration: number): InvestmentYearData[] {
+  const annualData: InvestmentYearData[] = [];
   let investmentValue = initialInvestment;
 
   for (let i = 0; i < duration; i++) {

@@ -11,10 +11,10 @@ import { calculateInvestmentResults } from '../investment-results/investment-res
   styleUrl: './user-input.component.css'
 })
 export class UserInputComponent {
-  static initialInvestmentDefault = 0;
-  static annualInvestmentDefault = 0;
-  static expectedReturnDefault = 5;
-  static durationDefault = 10;
+  static initialInvestmentDefault = '0';
+  static annualInvestmentDefault = '0';
+  static expectedReturnDefault = '5';
+  static durationDefault = '10';
 
   initialInvestment = signal(UserInputComponent.initialInvestmentDefault);
   annualInvestment = signal(UserInputComponent.annualInvestmentDefault);
@@ -25,10 +25,10 @@ export class UserInputComponent {
 
   onSubmit(): void {
     const results = calculateInvestmentResults(
-      this.initialInvestment(),
-      this.annualInvestment(),
-      this.expectedReturn(),
-      this.duration()
+      +this.initialInvestment(),
+      +this.annualInvestment(),
+      +this.expectedReturn(),
+      +this.duration()
     );
 
     this.calculate.emit(results);

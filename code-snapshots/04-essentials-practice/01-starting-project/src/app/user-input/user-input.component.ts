@@ -11,10 +11,15 @@ import { calculateInvestmentResults } from '../investment-results/investment-res
   styleUrl: './user-input.component.css'
 })
 export class UserInputComponent {
-  initialInvestment = signal(0);
-  annualInvestment = signal(0);
-  expectedReturn = signal(5);
-  duration = signal(10);
+  static initialInvestmentDefault = 0;
+  static annualInvestmentDefault = 0;
+  static expectedReturnDefault = 5;
+  static durationDefault = 10;
+
+  initialInvestment = signal(UserInputComponent.initialInvestmentDefault);
+  annualInvestment = signal(UserInputComponent.annualInvestmentDefault);
+  expectedReturn = signal(UserInputComponent.expectedReturnDefault);
+  duration = signal(UserInputComponent.durationDefault);
 
   calculate = output<InvestmentYearData[]>();
 
@@ -27,5 +32,11 @@ export class UserInputComponent {
     );
 
     this.calculate.emit(results);
+
+    // Reset input
+    this.initialInvestment.set(UserInputComponent.initialInvestmentDefault);
+    this.annualInvestment.set(UserInputComponent.annualInvestmentDefault);
+    this.expectedReturn.set(UserInputComponent.expectedReturnDefault);
+    this.duration.set(UserInputComponent.durationDefault);
   }
 }

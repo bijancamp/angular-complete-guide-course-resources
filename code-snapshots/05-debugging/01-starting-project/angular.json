@@ -64,7 +64,8 @@
               "buildTarget": "debugging:build:production"
             },
             "development": {
-              "buildTarget": "debugging:build:development"
+              "buildTarget": "debugging:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"

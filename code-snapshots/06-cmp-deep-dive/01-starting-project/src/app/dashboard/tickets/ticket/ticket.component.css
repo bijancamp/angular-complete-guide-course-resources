@@ -11,6 +11,7 @@ h3 {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  cursor: pointer;
 }
 
 h3 div {
@@ -41,6 +42,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 button span:first-child {

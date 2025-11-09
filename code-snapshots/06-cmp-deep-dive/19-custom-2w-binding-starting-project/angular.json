@@ -62,7 +62,8 @@
               "buildTarget": "cmp-deep-dive:build:production"
             },
             "development": {
-              "buildTarget": "cmp-deep-dive:build:development"
+              "buildTarget": "cmp-deep-dive:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"

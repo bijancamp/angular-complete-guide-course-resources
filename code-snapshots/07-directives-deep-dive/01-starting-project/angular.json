@@ -62,7 +62,8 @@
               "buildTarget": "directives-deep-dive:build:production"
             },
             "development": {
-              "buildTarget": "directives-deep-dive:build:development"
+              "buildTarget": "directives-deep-dive:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"

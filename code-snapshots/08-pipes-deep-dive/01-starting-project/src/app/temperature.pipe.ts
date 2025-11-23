@@ -9,7 +9,7 @@ export class TemperaturePipe implements PipeTransform {
     value: string | number,
     inputType: 'cel' | 'fah',
     outputType?: 'cel' | 'fah'
-  ) {
+  ): string {
     let val: number;
 
     if (typeof value === 'string') {

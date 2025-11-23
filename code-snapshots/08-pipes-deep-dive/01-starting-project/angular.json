@@ -62,7 +62,8 @@
               "buildTarget": "pipes-deep-dive:build:production"
             },
             "development": {
-              "buildTarget": "pipes-deep-dive:build:development"
+              "buildTarget": "pipes-deep-dive:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"
